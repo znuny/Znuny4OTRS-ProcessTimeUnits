@@ -9,5 +9,5 @@ job_unit_otrs_Znuny4OTRSProcessTimeUnits:
     - env
     - pwd
     - /run.sh
-    - su -c "perl /opt/otrs/bin/otrs.Console.pl Znuny4OTRS::AdvancedPackageManager::InstallSOPM /opt/otrs/Mewa-CoreDataProcessWidgets.sopm" -s /bin/bash otrs
+    - su -c "perl /opt/otrs/bin/otrs.Console.pl Znuny4OTRS::AdvancedPackageManager::InstallSOPM /opt/otrs/Znuny4OTRS-ProcessTimeUnits.sopm" -s /bin/bash otrs
     - su -c "perl /opt/otrs/bin/otrs.Console.pl Dev::UnitTest::Run --verbose --test Znuny4OTRSProcessTimeUnits" -s /bin/bash otrs
