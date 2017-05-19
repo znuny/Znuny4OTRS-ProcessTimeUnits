@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="1.0" init="Config">
+    <ConfigItem Name="Ticket::EventModulePost###999-Znuny4OTRSProcessTimeUnits" Required="0" Valid="1">
+        <Description Translatable="1">This configuration registers a Ticket-EventModule that creates an article and sets the time units given in a dynamic field.</Description>
+        <Group>Znuny4OTRS-ProcessTimeUnits</Group>
+        <SubGroup>Core::Ticket</SubGroup>
+        <Setting>
+            <Hash>
+                <Item Key="Module">Kernel::System::Ticket::Event::Znuny4OTRSProcessTimeUnits</Item>
+                <Item Key="Transaction">1</Item>
+                <Item Key="Event">TicketDynamicFieldUpdate_ProcessTimeUnits</Item>
+            </Hash>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Znuny4OTRSProcessTimeUnits::Article###Subject" Required="1" Valid="1">
+        <Description Translatable="1">This configuration defines the subject of the article which needs to be created to set the time units.</Description>
+        <Group>Znuny4OTRS-ProcessTimeUnits</Group>
+        <SubGroup>Core</SubGroup>
+        <Setting>
+            <String Regex="^.+$">Updated time units for the ticket!</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Znuny4OTRSProcessTimeUnits::Article###Body" Required="1" Valid="1">
+        <Description Translatable="1">This configuration defines the body of the article which needs to be created to set the time units.</Description>
+        <Group>Znuny4OTRS-ProcessTimeUnits</Group>
+        <SubGroup>Core</SubGroup>
+        <Setting>
+            <TextArea>Updated time units for the ticket!</TextArea>
+        </Setting>
+    </ConfigItem>
+</otrs_config>

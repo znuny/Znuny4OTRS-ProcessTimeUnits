@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_package version="1.0">
+    <Name>Znuny4OTRS-ProcessTimeUnits</Name>
+    <Version>1.0.0</Version>
+    <Framework>5.0.x</Framework>
+    <PackageRequired Version="5.0.30">Znuny4OTRS-Repo</PackageRequired>
+    <Vendor>Znuny GmbH</Vendor>
+    <URL>http://znuny.com/</URL>
+    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
+    <Description Lang="en">This package contains the functionality to set time units in processes without displaying article field.</Description>
+    <Description Lang="de">Dieses Paket enthält die Funktionalität um Arbeitszeiteinheiten in Prozessen ohne Artikel-Feld zu setzen.</Description>
+    <Filelist>
+        <File Permission="644" Location="Kernel/Config/Files/Znuny4OTRSProcessTimeUnits.xml"/>
+        <File Permission="644" Location="Kernel/Language/de_Znuny4OTRSProcessTimeUnits.pm"/>
+        <File Permission="644" Location="Kernel/System/Ticket/Event/Znuny4OTRSProcessTimeUnits.pm"/>
+        <File Permission="644" Location="scripts/test/Znuny4OTRSProcessTimeUnits.t"/>
+        <File Permission="644" Location="var/packagesetup/Znuny4OTRSProcessTimeUnits.pm"/>
+    </Filelist>
+    <CodeUninstall Type="pre"><![CDATA[
+        $Kernel::OM->Get('var::packagesetup::Znuny4OTRSProcessTimeUnits')->CodeUninstall();
+    ]]></CodeUninstall>
+    <CodeInstall Type="post"><![CDATA[
+        $Kernel::OM->Get('var::packagesetup::Znuny4OTRSProcessTimeUnits')->CodeInstall();
+    ]]></CodeInstall>
+    <CodeUpgrade Type="post"><![CDATA[
+        $Kernel::OM->Get('var::packagesetup::Znuny4OTRSProcessTimeUnits')->CodeUpgrade();
+    ]]></CodeUpgrade>
+    <CodeReinstall Type="post"><![CDATA[
+        $Kernel::OM->Get('var::packagesetup::Znuny4OTRSProcessTimeUnits')->CodeReinstall();
+    ]]></CodeReinstall>
+</otrs_package>
