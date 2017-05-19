@@ -19,6 +19,7 @@ our @ObjectDependencies = (
     'Kernel::System::DynamicField::Backend',
     'Kernel::System::Log',
     'Kernel::System::Ticket',
+    'Kernel::System::User',
 );
 
 sub new {
@@ -39,6 +40,7 @@ sub Run {
     my $DynamicFieldObject = $Kernel::OM->Get('Kernel::System::DynamicField');
     my $LogObject          = $Kernel::OM->Get('Kernel::System::Log');
     my $TicketObject       = $Kernel::OM->Get('Kernel::System::Ticket');
+    my $UserObject         = $Kernel::OM->Get('Kernel::System::User');
 
     # check needed stuff
     NEEDED:
@@ -76,6 +78,10 @@ sub Run {
 
     my %Article = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
 
+    my %User = $UserObject->GetUserData(
+        UserID => $Param{UserID},
+    );
+
     my $ArticleID = $TicketObject->ArticleCreate(
         TicketID       => $TicketID,
         ArticleType    => 'note-internal',
@@ -84,6 +90,7 @@ sub Run {
         MimeType       => 'text/plain',
         HistoryType    => 'AddNote',
         HistoryComment => 'Added article for time accounting.',
+        From           => "$User{UserFullname} <$User{UserEmail}>",
         UserID         => $Param{UserID},
         %Article,
     );
