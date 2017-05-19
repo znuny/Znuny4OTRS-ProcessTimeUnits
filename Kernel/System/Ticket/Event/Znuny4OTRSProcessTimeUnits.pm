@@ -90,7 +90,7 @@ sub Run {
         MimeType       => 'text/plain',
         HistoryType    => 'AddNote',
         HistoryComment => 'Added article for time accounting.',
-        From           => "$User{UserFullname} <$User{UserEmail}>",
+        From           => "\"$User{UserFullname}\" <$User{UserEmail}>",
         UserID         => $Param{UserID},
         %Article,
     );
