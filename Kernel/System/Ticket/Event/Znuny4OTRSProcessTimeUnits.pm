@@ -77,23 +77,45 @@ sub Run {
     return if !$Ticket{DynamicField_ProcessTimeUnits};
 
     my %Article = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
+    my $ArticleCreateOnce = $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::ArticleCreateOnce');
 
     my %User = $UserObject->GetUserData(
         UserID => $Param{UserID},
     );
 
-    my $ArticleID = $TicketObject->ArticleCreate(
-        TicketID       => $TicketID,
-        ArticleType    => 'note-internal',
-        SenderType     => 'agent',
-        Charset        => 'utf-8',
-        MimeType       => 'text/plain',
-        HistoryType    => 'AddNote',
-        HistoryComment => 'Added article for time accounting.',
-        From           => "\"$User{UserFullname}\" <$User{UserEmail}>",
-        UserID         => $Param{UserID},
-        %Article,
-    );
+    my $ArticleID;
+    if ($ArticleCreateOnce) {
+        my %Flags = $TicketObject->TicketFlagGet(
+            TicketID => $TicketID,
+            UserID   => 1,
+        );
+
+        if ( $Flags{Znuny4OTRSProcessTimeUnits} ) {
+            $ArticleID = $Flags{Znuny4OTRSProcessTimeUnits};
+        }
+    }
+
+    if ( !$ArticleID ) {
+        $ArticleID = $TicketObject->ArticleCreate(
+            TicketID       => $TicketID,
+            ArticleType    => 'note-internal',
+            SenderType     => 'agent',
+            Charset        => 'utf-8',
+            MimeType       => 'text/plain',
+            HistoryType    => 'AddNote',
+            HistoryComment => 'Added article for time accounting.',
+            From           => "\"$User{UserFullname}\" <$User{UserEmail}>",
+            UserID         => $Param{UserID},
+            %Article,
+        );
+
+        $TicketObject->TicketFlagSet(
+            TicketID => $TicketID,
+            Key      => 'Znuny4OTRSProcessTimeUnits',
+            Value    => $ArticleID,
+            UserID   => 1,
+        );
+    }
 
     $TicketObject->TicketAccountTime(
         TicketID  => $TicketID,

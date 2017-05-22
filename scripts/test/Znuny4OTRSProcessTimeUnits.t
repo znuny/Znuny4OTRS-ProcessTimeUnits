@@ -91,4 +91,82 @@ $Self->Is(
     "check body of time accounting article",
 );
 
+my $ExpectedFlagArticleID = $ArticleIndex[-1]->{ArticleID};
+
+#
+# create second article
+#
+
+$Success = $BackendObject->ValueSet(
+    DynamicFieldConfig => $DynamicFieldConfig,
+    ObjectID           => $TicketID,
+    Value              => '500',
+    UserID             => 1,
+);
+
+$Self->True(
+    $Success,
+    "ValueSet(500)",
+);
+
+$Kernel::OM->ObjectsDiscard(
+    Objects => ['Kernel::System::Ticket'],
+);
+$TicketObject = $Kernel::OM->Get('Kernel::System::Ticket');
+
+$AccountedTime = $TicketObject->TicketAccountedTimeGet( TicketID => $TicketID );
+
+$Self->Is(
+    $AccountedTime,
+    1000,
+    "accounted time is 1000",
+);
+
+%Ticket = $TicketObject->TicketGet(
+    TicketID      => $TicketID,
+    DynamicFields => 1,
+    UserID        => 1,
+);
+
+$Self->Is(
+    $Ticket{DynamicField_ProcessTimeUnits},
+    undef,
+    "value of ProcessTimeUnits got set to undef after event",
+);
+
+%ArticleConfig = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
+
+@ArticleIndex = $TicketObject->ArticleGet(
+    TicketID => $TicketID,
+    UserID   => 1,
+);
+
+$Self->True(
+    @ArticleIndex == 1 ? 1 : 0,
+    'No second article got created',
+);
+
+$Self->Is(
+    $ArticleIndex[-1]->{Subject},
+    $ArticleConfig{Subject},
+    "check subject of time accounting article",
+);
+
+$Self->Is(
+    $ArticleIndex[-1]->{Body},
+    $ArticleConfig{Body},
+    "check body of time accounting article",
+);
+
+my %Flags = $TicketObject->TicketFlagGet(
+    TicketID => $TicketID,
+    UserID   => 1,
+);
+
+$Self->Is(
+    $Flags{Znuny4OTRSProcessTimeUnits},
+    $ExpectedFlagArticleID,
+    'Ticket got flag with correct article id'
+);
+
 1;
