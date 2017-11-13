@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="2.0" init="Config">
+    <Setting Name="Ticket::EventModulePost###999-Znuny4OTRSProcessTimeUnits" Required="0" Valid="1">
+        <Description Translatable="1">This configuration registers a Ticket-EventModule that creates an article and sets the time units given in a dynamic field.</Description>
+        <Navigation>Core::Event::Ticket</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Module">Kernel::System::Ticket::Event::Znuny4OTRSProcessTimeUnits</Item>
+                <Item Key="Transaction">1</Item>
+                <Item Key="Event">TicketDynamicFieldUpdate_ProcessTimeUnits</Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="Znuny4OTRSProcessTimeUnits::Article###Subject" Required="1" Valid="1">
+        <Description Translatable="1">This configuration defines the subject of the article which needs to be created to set the time units.</Description>
+        <Navigation>Core</Navigation>
+        <Value>
+            <Item ValueType="String" ValueRegex="^.+$">Updated time units for the ticket!</Item>
+        </Value>
+    </Setting>
+    <Setting Name="Znuny4OTRSProcessTimeUnits::Article###Body" Required="1" Valid="1">
+        <Description Translatable="1">This configuration defines the body of the article which needs to be created to set the time units.</Description>
+        <Navigation>Core</Navigation>
+        <Value>
+            <Item ValueType="Textarea">Updated time units for the ticket!</Item>
+        </Value>
+    </Setting>
+    <Setting Name="Znuny4OTRSProcessTimeUnits::ArticleCreateOnce" Required="1" Valid="1">
+        <Description Translatable="1">This configuration defines if the article create for the time accouting should be created once and all time accountings should be added on this article.</Description>
+        <Navigation>Core</Navigation>
+        <Value>
+            <Item ValueType="Checkbox">1</Item>
+        </Value>
+    </Setting>
+</otrs_config>

@@ -29,11 +29,7 @@ All code to execute during package installation
 
 =head1 PUBLIC INTERFACE
 
-=over 4
-
-=cut
-
-=item new()
+=head2 new()
 
 create an object
 
@@ -52,12 +48,12 @@ sub new {
 
     my $ZnunyHelperObject = $Kernel::OM->Get('Kernel::System::ZnunyHelper');
 
-    $ZnunyHelperObject->_PackageSetupInit();
+    $ZnunyHelperObject->_RebuildConfig();
 
     return $Self;
 }
 
-=item CodeInstall()
+=head2 CodeInstall()
 
 run the code install part
 
@@ -88,7 +84,7 @@ sub CodeInstall {
     return 1;
 }
 
-=item CodeReinstall()
+=head2 CodeReinstall()
 
 run the code reinstall part
 
@@ -104,7 +100,7 @@ sub CodeReinstall {
     return 1;
 }
 
-=item CodeUpgrade()
+=head2 CodeUpgrade()
 
 run the code upgrade part
 
@@ -120,7 +116,7 @@ sub CodeUpgrade {
     return 1;
 }
 
-=item CodeUninstall()
+=head2 CodeUninstall()
 
 run the code uninstall part
 
@@ -135,8 +131,6 @@ sub CodeUninstall {
 }
 
 1;
-
-=back
 
 =head1 TERMS AND CONDITIONS
 
