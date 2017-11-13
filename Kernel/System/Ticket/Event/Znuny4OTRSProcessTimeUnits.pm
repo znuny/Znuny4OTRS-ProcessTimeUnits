@@ -19,6 +19,7 @@ our @ObjectDependencies = (
     'Kernel::System::DynamicField::Backend',
     'Kernel::System::Log',
     'Kernel::System::Ticket',
+    'Kernel::System::Ticket::Article',
     'Kernel::System::User',
 );
 
@@ -41,6 +42,7 @@ sub Run {
     my $LogObject          = $Kernel::OM->Get('Kernel::System::Log');
     my $TicketObject       = $Kernel::OM->Get('Kernel::System::Ticket');
     my $UserObject         = $Kernel::OM->Get('Kernel::System::User');
+    my $ArticleObject      = $Kernel::OM->Get('Kernel::System::Ticket::Article');
 
     # check needed stuff
     NEEDED:
@@ -96,16 +98,17 @@ sub Run {
     }
 
     if ( !$ArticleID ) {
-        $ArticleID = $TicketObject->ArticleCreate(
-            TicketID       => $TicketID,
-            ArticleType    => 'note-internal',
-            SenderType     => 'agent',
-            Charset        => 'utf-8',
-            MimeType       => 'text/plain',
-            HistoryType    => 'AddNote',
-            HistoryComment => 'Added article for time accounting.',
-            From           => "\"$User{UserFullname}\" <$User{UserEmail}>",
-            UserID         => $Param{UserID},
+        $ArticleID = $ArticleObject->ArticleCreate(
+            TicketID             => $TicketID,
+            ChannelName          => 'Internal',
+            IsVisibleForCustomer => 0,
+            SenderType           => 'agent',
+            Charset              => 'utf-8',
+            MimeType             => 'text/plain',
+            HistoryType          => 'AddNote',
+            HistoryComment       => 'Added article for time accounting.',
+            From                 => "\"$User{UserFullname}\" <$User{UserEmail}>",
+            UserID               => $Param{UserID},
             %Article,
         );
 

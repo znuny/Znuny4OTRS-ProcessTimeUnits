@@ -6,7 +6,7 @@
     <ChangeLog Version="5.0.3" Date="2017-05-19 15:12:29 +0200">Added quotes for from field.</ChangeLog>
     <ChangeLog Version="5.0.2" Date="2017-05-19 14:53:12 +0200">Added from for article creation.</ChangeLog>
     <ChangeLog Version="5.0.1" Date="2017-05-19 14:49:23 +0200">Initial release 5.0.x.</ChangeLog>
-    <Framework>5.0.x</Framework>
+    <Framework>6.0.x</Framework>
     <PackageRequired Version="5.0.23">Znuny4OTRS-Repo</PackageRequired>
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
@@ -14,11 +14,11 @@
     <Description Lang="en">This package contains the functionality to set time units in processes without displaying article field.</Description>
     <Description Lang="de">Dieses Paket enthält die Funktionalität um Arbeitszeiteinheiten in Prozessen ohne Artikel-Feld zu setzen.</Description>
     <Filelist>
-        <File Permission="644" Location="Kernel/Config/Files/Znuny4OTRSProcessTimeUnits.xml"/>
-        <File Permission="644" Location="Kernel/Language/de_Znuny4OTRSProcessTimeUnits.pm"/>
-        <File Permission="644" Location="Kernel/System/Ticket/Event/Znuny4OTRSProcessTimeUnits.pm"/>
-        <File Permission="644" Location="scripts/test/Znuny4OTRSProcessTimeUnits.t"/>
-        <File Permission="644" Location="var/packagesetup/Znuny4OTRSProcessTimeUnits.pm"/>
+        <File Permission="660" Location="Kernel/Config/Files/XML/Znuny4OTRSProcessTimeUnits.xml"/>
+        <File Permission="660" Location="Kernel/Language/de_Znuny4OTRSProcessTimeUnits.pm"/>
+        <File Permission="660" Location="Kernel/System/Ticket/Event/Znuny4OTRSProcessTimeUnits.pm"/>
+        <File Permission="660" Location="scripts/test/Znuny4OTRSProcessTimeUnits.t"/>
+        <File Permission="660" Location="var/packagesetup/Znuny4OTRSProcessTimeUnits.pm"/>
     </Filelist>
     <CodeUninstall Type="pre"><![CDATA[
         $Kernel::OM->Get('var::packagesetup::Znuny4OTRSProcessTimeUnits')->CodeUninstall();

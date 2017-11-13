@@ -16,8 +16,7 @@ use Kernel::System::VariableCheck qw(:all);
 
 $Kernel::OM->ObjectParamAdd(
     'Kernel::System::UnitTest::Helper' => {
-        RestoreSystemConfiguration => 1,
-        RestoreDatabase            => 1,
+        RestoreDatabase => 1,
     },
 );
 
@@ -28,6 +27,7 @@ my $DynamicFieldObject = $Kernel::OM->Get('Kernel::System::DynamicField');
 my $HelperObject       = $Kernel::OM->Get('Kernel::System::UnitTest::Helper');
 my $TicketObject       = $Kernel::OM->Get('Kernel::System::Ticket');
 my $ZnunyHelperObject  = $Kernel::OM->Get('Kernel::System::ZnunyHelper');
+my $ArticleObject      = $Kernel::OM->Get('Kernel::System::Ticket::Article');
 
 my $TicketID = $HelperObject->TicketCreate();
 
@@ -74,24 +74,30 @@ $Self->Is(
 
 my %ArticleConfig = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
 
-my @ArticleIndex = $TicketObject->ArticleGet(
+my @ArticleIndex = $ArticleObject->ArticleList(
     TicketID => $TicketID,
+    OnlyLast => 1,
     UserID   => 1,
 );
 
+my %LastArticle = $ArticleObject->ArticleGet(
+    %{ $ArticleIndex[-1] },
+    UserID => 1,
+);
+
 $Self->Is(
-    $ArticleIndex[-1]->{Subject},
+    $LastArticle{Subject},
     $ArticleConfig{Subject},
     "check subject of time accounting article",
 );
 
 $Self->Is(
-    $ArticleIndex[-1]->{Body},
+    $LastArticle{Body},
     $ArticleConfig{Body},
     "check body of time accounting article",
 );
 
-my $ExpectedFlagArticleID = $ArticleIndex[-1]->{ArticleID};
+my $ExpectedFlagArticleID = $LastArticle{ArticleID};
 
 #
 # create second article
@@ -136,9 +142,15 @@ $Self->Is(
 
 %ArticleConfig = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
 
-@ArticleIndex = $TicketObject->ArticleGet(
+@ArticleIndex = $ArticleObject->ArticleList(
     TicketID => $TicketID,
+    OnlyLast => 1,
     UserID   => 1,
+);
+
+%LastArticle = $ArticleObject->ArticleGet(
+    %{ $ArticleIndex[-1] },
+    UserID => 1,
 );
 
 $Self->True(
@@ -147,13 +159,13 @@ $Self->True(
 );
 
 $Self->Is(
-    $ArticleIndex[-1]->{Subject},
+    $LastArticle{Subject},
     $ArticleConfig{Subject},
     "check subject of time accounting article",
 );
 
 $Self->Is(
-    $ArticleIndex[-1]->{Body},
+    $LastArticle{Body},
     $ArticleConfig{Body},
     "check body of time accounting article",
 );
