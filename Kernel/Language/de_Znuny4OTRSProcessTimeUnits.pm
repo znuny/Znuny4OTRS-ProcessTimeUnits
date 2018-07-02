@@ -20,6 +20,7 @@ sub Data {
     $Self->{Translation}->{'This configuration defines the subject of the article which needs to be created to set the time units.'}                                                   = 'Diese Konfiguration definiert den Betreff des Artikels, welcher benötigt wird um die Zeiteinheiten zu setzen.';
     $Self->{Translation}->{'This configuration defines the body of the article which needs to be created to set the time units.'}                                                      = 'Diese Konfiguration definiert den Inhalt des Artikels, welcher benötigt wird um die Zeiteinheiten zu setzen.';
     $Self->{Translation}->{'This configuration defines if the article create for the time accouting should be created once and all time accountings should be added on this article.'} = 'Diese Konfiguration definiert, ob die Artikel-Erstellung für die Zeiterfassung nur einmal erstellt werden soll und all weiteren Zeiterfassungen zu dem bestehenden Artikel erstellt werden soll.';
+    $Self->{Translation}->{'This configuration defines the sender type for the article which needs to be created to set the time units.'}                                              = 'Diese Konfiguration definiert den Sender-Typ des Artikels, welcher benötigt wird um die Zeiteinheiten zu setzen.';
 
     return 1;
 }
