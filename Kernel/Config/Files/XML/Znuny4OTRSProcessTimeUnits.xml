@@ -26,7 +26,7 @@
         </Value>
     </Setting>
     <Setting Name="Znuny4OTRSProcessTimeUnits::Article###SenderType" Required="1" Valid="1">
-        <Description Translatable="1">This configuration defines the subject of the article which needs to be created to set the time units.</Description>
+        <Description Translatable="1">This configuration defines the sender type for the article which needs to be created to set the time units.</Description>
         <Navigation>Core</Navigation>
         <Value>
             <Item ValueType="String" ValueRegex="^.+$">agent</Item>
