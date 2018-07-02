@@ -25,6 +25,13 @@
             <Item ValueType="Textarea">Updated time units for the ticket!</Item>
         </Value>
     </Setting>
+    <Setting Name="Znuny4OTRSProcessTimeUnits::Article###SenderType" Required="1" Valid="1">
+        <Description Translatable="1">This configuration defines the subject of the article which needs to be created to set the time units.</Description>
+        <Navigation>Core</Navigation>
+        <Value>
+            <Item ValueType="String" ValueRegex="^.+$">agent</Item>
+        </Value>
+    </Setting>
     <Setting Name="Znuny4OTRSProcessTimeUnits::ArticleCreateOnce" Required="1" Valid="1">
         <Description Translatable="1">This configuration defines if the article create for the time accouting should be created once and all time accountings should be added on this article.</Description>
         <Navigation>Core</Navigation>

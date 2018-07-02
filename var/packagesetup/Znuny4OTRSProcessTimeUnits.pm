@@ -1,5 +1,5 @@
 # --
-# Copyright (C) 2012-2017 Znuny GmbH, http://znuny.com/
+# Copyright (C) 2012-2018 Znuny GmbH, http://znuny.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -21,7 +21,7 @@ use Kernel::System::VariableCheck qw(:all);
 
 =head1 NAME
 
-Znuny4OTRSProcessTimeUnits.pm - code to execute during package installation
+var::packagesetup::Znuny4OTRSProcessTimeUnits - code to execute during package installation
 
 =head1 SYNOPSIS
 
