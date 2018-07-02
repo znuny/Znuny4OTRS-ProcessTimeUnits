@@ -33,7 +33,7 @@
         <Group>Znuny4OTRS-ProcessTimeUnits</Group>
         <SubGroup>Core</SubGroup>
         <Setting>
-            <String>agent</String>
+            <String Regex="^.+$">agent</String>
         </Setting>
     </ConfigItem>
     <ConfigItem Name="Znuny4OTRSProcessTimeUnits::ArticleCreateOnce" Required="1" Valid="1">
