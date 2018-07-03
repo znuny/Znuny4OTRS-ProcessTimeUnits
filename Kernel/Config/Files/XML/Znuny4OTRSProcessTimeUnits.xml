@@ -29,7 +29,11 @@
         <Description Translatable="1">This configuration defines the sender type for the article which needs to be created to set the time units.</Description>
         <Navigation>Core</Navigation>
         <Value>
-            <Item ValueType="String" ValueRegex="^.+$">agent</Item>
+            <Item ValueType="Select" SelectedID="agent">
+                <Item ValueType="Option" Value="system" Translatable="1">system</Item>
+                <Item ValueType="Option" Value="customer" Translatable="1">customer</Item>
+                <Item ValueType="Option" Value="agent" Translatable="1">agent</Item>
+            </Item>
         </Value>
     </Setting>
     <Setting Name="Znuny4OTRSProcessTimeUnits::ArticleCreateOnce" Required="1" Valid="1">
