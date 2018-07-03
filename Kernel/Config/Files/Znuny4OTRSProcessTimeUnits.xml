@@ -33,7 +33,11 @@
         <Group>Znuny4OTRS-ProcessTimeUnits</Group>
         <SubGroup>Core</SubGroup>
         <Setting>
-            <String Regex="^.+$">agent</String>
+            <Option SelectedID="agent">
+                <Item Key="system" Translatable="1">system</Item>
+                <Item Key="customer" Translatable="1">customer</Item>
+                <Item Key="agent" Translatable="1">agent</Item>
+            </Option>
         </Setting>
     </ConfigItem>
     <ConfigItem Name="Znuny4OTRSProcessTimeUnits::ArticleCreateOnce" Required="1" Valid="1">
