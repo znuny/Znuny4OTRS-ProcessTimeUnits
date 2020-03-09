@@ -9,7 +9,7 @@
     <ChangeLog Version="5.0.2" Date="2017-05-19 14:53:12 +0200">Added from for article creation.</ChangeLog>
     <ChangeLog Version="5.0.1" Date="2017-05-19 14:49:23 +0200">Initial release 5.0.x.</ChangeLog>
     <Framework>6.0.x</Framework>
-    <PackageRequired Version="6.0.1">Znuny4OTRS-Repo</PackageRequired>
+    <PackageRequired Version="6.0.56">Znuny4OTRS-Repo</PackageRequired>
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
@@ -19,7 +19,7 @@
         <File Permission="660" Location="Kernel/Config/Files/XML/Znuny4OTRSProcessTimeUnits.xml"/>
         <File Permission="660" Location="Kernel/Language/de_Znuny4OTRSProcessTimeUnits.pm"/>
         <File Permission="660" Location="Kernel/System/Ticket/Event/Znuny4OTRSProcessTimeUnits.pm"/>
-        <File Permission="660" Location="scripts/test/Znuny4OTRSProcessTimeUnits.t"/>
+        <File Permission="660" Location="scripts/test/Znuny4OTRSProcessTimeUnits/System/Ticket/Event/Znuny4OTRSProcessTimeUnits.t"/>
         <File Permission="660" Location="var/packagesetup/Znuny4OTRSProcessTimeUnits.pm"/>
     </Filelist>
     <CodeUninstall Type="pre"><![CDATA[
