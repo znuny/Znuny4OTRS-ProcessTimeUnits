@@ -1,17 +1,12 @@
-image: registry.znuny.com/znuny/docker-otrs5ci:latest
+image: registry.znuny.com/znuny/internal/docker-otrs5ci:$OTRS_TAG
 
-services:
-  - name: registry.znuny.com/znuny/docker-mysql-utf8:latest
-    alias: mysql
+include:
+  - project: 'Znuny/Internal/Znuny'
+    file: '/templates/gitlab/default/.gitlab-ci-default.yml'
 
-stages:
-  - test
-
-job_unit_otrs_Znuny4OTRSProcessTimeUnits:
-  stage: test
-  script:
-    - env
-    - pwd
+default:
+  before_script:
     - /run.sh
-    - su -c "perl /opt/otrs/bin/otrs.Console.pl Znuny4OTRS::AdvancedPackageManager::InstallSOPM /opt/otrs/Znuny4OTRS-ProcessTimeUnits.sopm" -s /bin/bash otrs
-    - su -c "perl /opt/otrs/bin/otrs.Console.pl Dev::UnitTest::Run --verbose --test Znuny4OTRSProcessTimeUnits" -s /bin/bash otrs
+    - su -c "/opt/otrs/bin/otrs.Console.pl Znuny4OTRS::AdvancedPackageManager::InstallSOPM /opt/otrs/$CI_PROJECT_NAME.sopm" -s /bin/bash otrs
+  after_script:
+    - /unittest.sh
