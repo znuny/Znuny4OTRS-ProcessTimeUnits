@@ -9,7 +9,7 @@
     <ChangeLog Version="5.0.2" Date="2017-05-19 14:53:12 +0200">Added from for article creation.</ChangeLog>
     <ChangeLog Version="5.0.1" Date="2017-05-19 14:49:23 +0200">Initial release 5.0.x.</ChangeLog>
     <Framework>6.0.x</Framework>
-    <PackageRequired Version="6.0.56">Znuny4OTRS-Repo</PackageRequired>
+    <PackageRequired Version="6.0.57">Znuny4OTRS-Repo</PackageRequired>
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
