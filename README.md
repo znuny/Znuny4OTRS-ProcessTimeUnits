@@ -1,20 +1,19 @@
 ![Znuny logo](https://www.znuny.com/assets/images/logo_small.png)
 
 
-![Build status](https://badge.proxy.znuny.com/Znuny4OTRS-ProcessTimeUnits/master)
+![Build status](https://badge.proxy.znuny.com/Znuny4OTRS-ProcessTimeUnits/rel-6_1)
 
-Znuny4OTRS-ProcessTimeUnits
+Znuny-ProcessTimeUnits
 =================
 Record accounted time in an Activty Dialog without having an article field in it.
 
 **Prerequisites**
 
-- OTRS 6
-- [Znuny4OTRS-Repo](https://www.znuny.com/add-ons/znuny4otrs-repository)
+- Znuny 6.1
 
 **Installation**
 
-Download the [package](https://addons.znuny.com/api/addon_repos/public/1075/latest) and install it via admin interface -> package manager or use [Znuny4OTRS-Repo](https://www.znuny.com/add-ons/znuny4otrs-repository).
+Download the [package](https://addons.znuny.com/api/addon_repos/public/2123/latest) and install it via admin interface -> package manager.
 
 **Configuration**
 
@@ -22,11 +21,11 @@ The configuration is described in the manual in English and German. Download the
 
 **Download**
 
-Download the [latest version](https://addons.znuny.com/api/addon_repos/public/1075/latest).
+Download the [latest version](https://addons.znuny.com/api/addon_repos/public/2123/latest).
 
 **Professional Support**
 
-For this add-on and for OTRS in general visit [https://www.znuny.com](https://www.znuny.com). Looking forward to hear from you!
+For this add-on and for Znuny in general visit [https://www.znuny.com](https://www.znuny.com). Looking forward to hear from you!
 
 Enjoy!
 

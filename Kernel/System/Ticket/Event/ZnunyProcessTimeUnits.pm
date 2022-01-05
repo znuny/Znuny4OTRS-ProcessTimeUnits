@@ -1,12 +1,12 @@
 # --
-# Copyright (C) 2012-2021 Znuny GmbH, http://znuny.com/
+# Copyright (C) 2012-2022 Znuny GmbH, http://znuny.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
 
-package Kernel::System::Ticket::Event::Znuny4OTRSProcessTimeUnits;
+package Kernel::System::Ticket::Event::ZnunyProcessTimeUnits;
 
 use strict;
 use warnings;
@@ -26,7 +26,6 @@ our @ObjectDependencies = (
 sub new {
     my ( $Type, %Param ) = @_;
 
-    # allocate new hash for object
     my $Self = {};
     bless( $Self, $Type );
 
@@ -78,8 +77,8 @@ sub Run {
 
     return if !$Ticket{DynamicField_ProcessTimeUnits};
 
-    my %Article           = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
-    my $ArticleCreateOnce = $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::ArticleCreateOnce');
+    my %Article           = %{ $ConfigObject->Get('ZnunyProcessTimeUnits::Article') || {} };
+    my $ArticleCreateOnce = $ConfigObject->Get('ZnunyProcessTimeUnits::ArticleCreateOnce');
 
     my %User = $UserObject->GetUserData(
         UserID => $Param{UserID},
@@ -92,8 +91,8 @@ sub Run {
             UserID   => 1,
         );
 
-        if ( $Flags{Znuny4OTRSProcessTimeUnits} ) {
-            $ArticleID = $Flags{Znuny4OTRSProcessTimeUnits};
+        if ( $Flags{ZnunyProcessTimeUnits} ) {
+            $ArticleID = $Flags{ZnunyProcessTimeUnits};
         }
     }
 
@@ -114,7 +113,7 @@ sub Run {
 
         $TicketObject->TicketFlagSet(
             TicketID => $TicketID,
-            Key      => 'Znuny4OTRSProcessTimeUnits',
+            Key      => 'ZnunyProcessTimeUnits',
             Value    => $ArticleID,
             UserID   => 1,
         );

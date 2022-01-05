@@ -1,5 +1,5 @@
 # --
-# Copyright (C) 2012-2021 Znuny GmbH, http://znuny.com/
+# Copyright (C) 2012-2022 Znuny GmbH, http://znuny.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -72,7 +72,7 @@ $Self->Is(
     "value of ProcessTimeUnits got set to undef after event",
 );
 
-my %ArticleConfig = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
+my %ArticleConfig = %{ $ConfigObject->Get('ZnunyProcessTimeUnits::Article') || {} };
 
 my @ArticleIndex = $ArticleObject->ArticleList(
     TicketID => $TicketID,
@@ -140,7 +140,7 @@ $Self->Is(
     "value of ProcessTimeUnits got set to undef after event",
 );
 
-%ArticleConfig = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
+%ArticleConfig = %{ $ConfigObject->Get('ZnunyProcessTimeUnits::Article') || {} };
 
 @ArticleIndex = $ArticleObject->ArticleList(
     TicketID => $TicketID,
@@ -176,7 +176,7 @@ my %Flags = $TicketObject->TicketFlagGet(
 );
 
 $Self->Is(
-    $Flags{Znuny4OTRSProcessTimeUnits},
+    $Flags{ZnunyProcessTimeUnits},
     $ExpectedFlagArticleID,
     'Ticket got flag with correct article id'
 );
