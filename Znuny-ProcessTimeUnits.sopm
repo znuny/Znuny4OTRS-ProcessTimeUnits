@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
-    <Name>Znuny4OTRS-ProcessTimeUnits</Name>
+    <Name>Znuny-ProcessTimeUnits</Name>
     <Version>6.0.4</Version>
     <ChangeLog Version="6.0.4" Date="2021-02-12 17:34:40 +0100">Happy new year. Tidied code.</ChangeLog>
     <ChangeLog Version="6.0.3" Date="2020-04-07 11:26:52 +0200">Added README.md and improved documentation.</ChangeLog>
     <ChangeLog Version="6.0.2" Date="2018-07-03 10:50:46 +0200">Added possibility to modify sender type for article creation (#1).</ChangeLog>
     <ChangeLog Version="6.0.1" Date="2017-11-13 14:21:27 +0100">Initial release 6.0.x.</ChangeLog>
-    <ChangeLog Version="5.0.4" Date="2017-05-22 09:52:22 +0200">Added sysconfig option to create article only once for time accounting (Znuny4OTRSProcessTimeUnits::ArticleCreateOnce).</ChangeLog>
+    <ChangeLog Version="5.0.4" Date="2017-05-22 09:52:22 +0200">Added sysconfig option to create article only once for time accounting (ZnunyProcessTimeUnits::ArticleCreateOnce).</ChangeLog>
     <ChangeLog Version="5.0.3" Date="2017-05-19 15:12:29 +0200">Added quotes for from field.</ChangeLog>
     <ChangeLog Version="5.0.2" Date="2017-05-19 14:53:12 +0200">Added from for article creation.</ChangeLog>
     <ChangeLog Version="5.0.1" Date="2017-05-19 14:49:23 +0200">Initial release 5.0.x.</ChangeLog>
-    <Framework>6.0.x</Framework>
-    <PackageRequired Version="6.0.71">Znuny4OTRS-Repo</PackageRequired>
+    <Framework>6.1.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
     <Description Lang="en">This package contains the functionality to set time units in processes without displaying article field.</Description>
     <Description Lang="de">Dieses Paket enthält die Funktionalität um Arbeitszeiteinheiten in Prozessen ohne Artikel-Feld zu setzen.</Description>
     <Filelist>
-        <File Permission="660" Location="Kernel/Config/Files/XML/Znuny4OTRSProcessTimeUnits.xml"/>
-        <File Permission="660" Location="Kernel/Language/de_Znuny4OTRSProcessTimeUnits.pm"/>
-        <File Permission="660" Location="Kernel/System/Ticket/Event/Znuny4OTRSProcessTimeUnits.pm"/>
-        <File Permission="660" Location="scripts/test/Znuny4OTRSProcessTimeUnits/System/Ticket/Event/Znuny4OTRSProcessTimeUnits.t"/>
-        <File Permission="660" Location="var/packagesetup/Znuny4OTRSProcessTimeUnits.pm"/>
+        <File Permission="660" Location="Kernel/Config/Files/XML/ZnunyProcessTimeUnits.xml"/>
+        <File Permission="660" Location="Kernel/Language/de_ZnunyProcessTimeUnits.pm"/>
+        <File Permission="660" Location="Kernel/System/Ticket/Event/ZnunyProcessTimeUnits.pm"/>
+        <File Permission="660" Location="scripts/test/ZnunyProcessTimeUnits/System/Ticket/Event/ZnunyProcessTimeUnits.t"/>
+        <File Permission="660" Location="var/packagesetup/ZnunyProcessTimeUnits.pm"/>
     </Filelist>
     <CodeUninstall Type="pre"><![CDATA[
-        $Kernel::OM->Get('var::packagesetup::Znuny4OTRSProcessTimeUnits')->CodeUninstall();
+        $Kernel::OM->Get('var::packagesetup::ZnunyProcessTimeUnits')->CodeUninstall();
     ]]></CodeUninstall>
     <CodeInstall Type="post"><![CDATA[
-        $Kernel::OM->Get('var::packagesetup::Znuny4OTRSProcessTimeUnits')->CodeInstall();
+        $Kernel::OM->Get('var::packagesetup::ZnunyProcessTimeUnits')->CodeInstall();
     ]]></CodeInstall>
     <CodeUpgrade Type="post"><![CDATA[
-        $Kernel::OM->Get('var::packagesetup::Znuny4OTRSProcessTimeUnits')->CodeUpgrade();
+        $Kernel::OM->Get('var::packagesetup::ZnunyProcessTimeUnits')->CodeUpgrade();
     ]]></CodeUpgrade>
     <CodeReinstall Type="post"><![CDATA[
-        $Kernel::OM->Get('var::packagesetup::Znuny4OTRSProcessTimeUnits')->CodeReinstall();
+        $Kernel::OM->Get('var::packagesetup::ZnunyProcessTimeUnits')->CodeReinstall();
     ]]></CodeReinstall>
+    <PackageMerge Name="Znuny4OTRS-ProcessTimeUnits" TargetVersion="6.0.4"></PackageMerge>
 </otrs_package>
