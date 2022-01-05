@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny-ProcessTimeUnits</Name>
-    <Version>6.0.4</Version>
+    <Version>6.2.1</Version>
+    <ChangeLog Version="6.2.1" Date="2022-01-05 15:35:46 +0100">Ported to 6.2.</ChangeLog>
     <ChangeLog Version="6.0.4" Date="2021-02-12 17:34:40 +0100">Happy new year. Tidied code.</ChangeLog>
     <ChangeLog Version="6.0.3" Date="2020-04-07 11:26:52 +0200">Added README.md and improved documentation.</ChangeLog>
     <ChangeLog Version="6.0.2" Date="2018-07-03 10:50:46 +0200">Added possibility to modify sender type for article creation (#1).</ChangeLog>
@@ -35,5 +36,5 @@
     <CodeReinstall Type="post"><![CDATA[
         $Kernel::OM->Get('var::packagesetup::ZnunyProcessTimeUnits')->CodeReinstall();
     ]]></CodeReinstall>
-    <PackageMerge Name="Znuny4OTRS-ProcessTimeUnits" TargetVersion="6.0.4"></PackageMerge>
+    <PackageMerge Name="Znuny4OTRS-ProcessTimeUnits" TargetVersion="6.0.4"/>
 </otrs_package>
