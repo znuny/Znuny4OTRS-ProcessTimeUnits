@@ -1,5 +1,5 @@
 # --
-# Copyright (C) 2012-2020 Znuny GmbH, http://znuny.com/
+# Copyright (C) 2012-2022 Znuny GmbH, http://znuny.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -76,7 +76,7 @@ sub Run {
 
     return if !$Ticket{DynamicField_ProcessTimeUnits};
 
-    my %Article = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
+    my %Article           = %{ $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::Article') || {} };
     my $ArticleCreateOnce = $ConfigObject->Get('Znuny4OTRSProcessTimeUnits::ArticleCreateOnce');
 
     my %User = $UserObject->GetUserData(
