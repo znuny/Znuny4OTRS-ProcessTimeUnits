@@ -1,7 +1,7 @@
 ![Znuny logo](https://www.znuny.com/assets/images/logo_small.png)
 
 
-![Build status](https://badge.proxy.znuny.com/Znuny4OTRS-ProcessTimeUnits/rel-6_2)
+![Build status](https://badge.proxy.znuny.com/Znuny4OTRS-ProcessTimeUnits/rel-6_3)
 
 Znuny-ProcessTimeUnits
 =================
@@ -9,11 +9,11 @@ Record accounted time in an Activty Dialog without having an article field in it
 
 **Prerequisites**
 
-- Znuny 6.2
+- Znuny 6.3
 
 **Installation**
 
-Download the [package](https://addons.znuny.com/api/addon_repos/public/2124/latest) and install it via admin interface -> package manager.
+Use the online repository or download the [package](https://addons.znuny.com/api/addon_repos/public/2242/latest) and install it via admin interface -> package manager.
 
 **Configuration**
 
@@ -21,7 +21,7 @@ The configuration is described in the manual in English and German. Download the
 
 **Download**
 
-Download the [latest version](https://addons.znuny.com/api/addon_repos/public/2124/latest).
+Download the [latest version](https://addons.znuny.com/api/addon_repos/public/2242/latest).
 
 **Professional Support**
 
