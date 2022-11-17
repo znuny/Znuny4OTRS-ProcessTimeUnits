@@ -2,6 +2,12 @@
 <otrs_package version="1.0">
     <Name>Znuny-ProcessTimeUnits</Name>
     <Version>6.4.1</Version>
+    <Framework>6.4.x</Framework>
+    <Vendor>Znuny GmbH</Vendor>
+    <URL>http://znuny.com/</URL>
+    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
+    <Description Lang="en">This package contains the functionality to set time units in processes without displaying article field.</Description>
+    <Description Lang="de">Dieses Paket enthält die Funktionalität um Arbeitszeiteinheiten in Prozessen ohne Artikel-Feld zu setzen.</Description>
     <ChangeLog Version="6.4.1" Date="2022-07-27 22:20:54 +0200">initial release for Znuny 6.4</ChangeLog>
     <ChangeLog Version="6.3.1" Date="2022-03-30 19:15:45 +0200">Ported to Znuny 6.3</ChangeLog>
     <ChangeLog Version="6.0.4" Date="2021-02-12 17:34:40 +0100">Happy new year. Tidied code.</ChangeLog>
@@ -12,12 +18,6 @@
     <ChangeLog Version="5.0.3" Date="2017-05-19 15:12:29 +0200">Added quotes for from field.</ChangeLog>
     <ChangeLog Version="5.0.2" Date="2017-05-19 14:53:12 +0200">Added from for article creation.</ChangeLog>
     <ChangeLog Version="5.0.1" Date="2017-05-19 14:49:23 +0200">Initial release 5.0.x.</ChangeLog>
-    <Framework>6.4.x</Framework>
-    <Vendor>Znuny GmbH</Vendor>
-    <URL>http://znuny.com/</URL>
-    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
-    <Description Lang="en">This package contains the functionality to set time units in processes without displaying article field.</Description>
-    <Description Lang="de">Dieses Paket enthält die Funktionalität um Arbeitszeiteinheiten in Prozessen ohne Artikel-Feld zu setzen.</Description>
     <Filelist>
         <File Permission="660" Location="Kernel/Config/Files/XML/ZnunyProcessTimeUnits.xml"/>
         <File Permission="660" Location="Kernel/Language/de_ZnunyProcessTimeUnits.pm"/>
