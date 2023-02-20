@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny-ProcessTimeUnits</Name>
-    <Version>6.4.1</Version>
+    <Version>6.5.1</Version>
     <Framework>6.5.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
     <Description Lang="en">This package contains the functionality to set time units in processes without displaying article field.</Description>
     <Description Lang="de">Dieses Paket enthält die Funktionalität um Arbeitszeiteinheiten in Prozessen ohne Artikel-Feld zu setzen.</Description>
+    <ChangeLog Version="6.5.1" Date="2023-02-20 13:23:50 +0100">initial release for Znuny 6.5.</ChangeLog>
     <ChangeLog Version="6.4.1" Date="2022-07-27 22:20:54 +0200">initial release for Znuny 6.4</ChangeLog>
     <ChangeLog Version="6.3.1" Date="2022-03-30 19:15:45 +0200">Ported to Znuny 6.3</ChangeLog>
     <ChangeLog Version="6.0.4" Date="2021-02-12 17:34:40 +0100">Happy new year. Tidied code.</ChangeLog>
