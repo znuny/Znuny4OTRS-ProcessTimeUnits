@@ -10,7 +10,6 @@ package Kernel::Language::de_ZnunyProcessTimeUnits;
 
 use strict;
 use warnings;
-
 use utf8;
 
 sub Data {
