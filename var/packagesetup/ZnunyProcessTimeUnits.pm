@@ -20,8 +20,6 @@ our @ObjectDependencies = (
     'Kernel::System::ZnunyHelper',
 );
 
-use Kernel::System::VariableCheck qw(:all);
-
 =head1 NAME
 
 var::packagesetup::ZnunyProcessTimeUnits - code to execute during package installation
