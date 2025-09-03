@@ -1,7 +1,7 @@
 ![Znuny logo](https://www.znuny.com/assets/images/logo_small.png)
 
 
-![Build status](https://badge.proxy.znuny.com/Znuny4OTRS-ProcessTimeUnits/rel-7_1)
+![Build status](https://badge.proxy.znuny.com/Znuny4OTRS-ProcessTimeUnits/rel-7_2)
 
 Znuny-ProcessTimeUnits
 ======================
@@ -9,7 +9,7 @@ Record accounted time in an Activty Dialog without having an article field in it
 
 **Prerequisites**
 
-- Znuny 7.1
+- Znuny 7.2
 
 **Installation**
 
